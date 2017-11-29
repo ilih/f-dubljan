@@ -1,0 +1,72 @@
+.carousel-slide {
+  margin-top: 30px;
+
+  img {
+    max-height: 700px;
+  }
+}
+
+.carousel {
+  .slick-dots {
+    position: absolute;
+    bottom: 23px;
+
+    li {
+      @include transition(all 0.3s);
+      border: 1px solid $white;
+      border-radius: 50%;
+
+      &.slick-active, &:hover {
+        background-color: $white;
+      }
+
+      button:before {
+        display: none;
+      }
+    }
+  }
+
+  .slick-arrow {
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+
+    &:before {
+      color: $green;
+      font-size: 36px;
+      @include transition(color 0.3s);
+      position: absolute;
+      top: 50%;
+      @include translate(0, -50%);
+      margin-top: 2px;
+    }
+
+    &:hover {
+      background: none;
+
+      &:before {
+        color: $darkGrey;
+      }
+    }
+
+    &.slick-next {
+      right: -3px;
+      border-right: 50px solid $light-grey;
+
+      &:before {
+        right: -50px;
+      }
+    }
+
+    &.slick-prev {
+      left: -3px;
+      border-left: 50px solid $light-grey;
+
+      &:before {
+        left: -50px;
+      }
+    }
+  }
+}

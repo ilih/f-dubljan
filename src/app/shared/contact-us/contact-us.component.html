@@ -1,0 +1,47 @@
+<div class="row contact-us form">
+  <div class="success-title" [class.active]="submitted">
+    <h2>{{ 'contact-us.success-title' | translate}}</h2>
+  </div>
+  <form (ngSubmit)="onSubmit(contactForm.value)" #contactForm="ngForm">
+    <h2 class="form-title">{{ 'contact-us.title' | translate }}</h2>
+    <h4 class="form-subtitle">{{ 'contact-us.subtitle' | translate }}</h4>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <input type="text" [(ngModel)]="model.name" name="name" required minlength="2" maxlength="20"
+               class="form-control" placeholder="{{ 'contact-us.name.name' | translate}}" #name="ngModel" pattern="\w+">
+        <span *ngIf="name.invalid && !name.pristine && name.touched" class="error">
+          <span *ngIf="name.errors.required">{{ 'contact-us.name.required' | translate}}</span>
+          <span *ngIf="name.errors.minlength">{{ 'contact-us.name.minlength' | translate}}</span>
+          <span *ngIf="name.errors.maxlength">{{ 'contact-us.name.maxlength' | translate}}</span>
+          <span *ngIf="name.errors.pattern">{{ 'contact-us.name.pattern' | translate}}</span>
+        </span>
+      </div>
+      <div class="form-group col-sm-6">
+        <input type="text" [(ngModel)]="model.phone" name="phone" required minlength="5" maxlength="10"
+               class="form-control" placeholder="{{ 'contact-us.phone.name' | translate}}" #phone="ngModel" pattern="\d{5,10}">
+        <span *ngIf="phone.invalid && !phone.pristine && phone.touched" class="error">
+          <span *ngIf="phone.errors.required">{{ 'contact-us.phone.required' | translate}}</span>
+          <span *ngIf="phone.errors.minlength">{{ 'contact-us.phone.minlength' | translate}}</span>
+          <span *ngIf="phone.errors.maxlength">{{ 'contact-us.phone.maxlength' | translate}}</span>
+          <span *ngIf="phone.errors.pattern">{{ 'contact-us.phone.pattern' | translate}}</span>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <input type="email" [(ngModel)]="model.email" name="email" required
+               class="form-control" placeholder="{{ 'contact-us.email.name' | translate}}" #email="ngModel" pattern="(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})">
+        <span *ngIf="email.invalid && !email.pristine && email.touched" class="error">
+          <span *ngIf="email.errors.required">{{ 'contact-us.email.required' | translate}}</span>
+          <span *ngIf="email.errors.pattern">{{ 'contact-us.email.pattern' | translate}}</span>
+        </span>
+      </div>
+      <div class="form-group col-sm-6">
+        <textarea [(ngModel)]="model.question" name="question" class="form-control" rows="1" placeholder="{{ 'contact-us.question.name' | translate}}"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="form-control" [disabled]="!contactForm.form.valid">{{ 'contact-us.send' | translate}}</button>
+    </div>
+  </form>
+</div>

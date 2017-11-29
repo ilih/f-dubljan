@@ -1,0 +1,13 @@
+<div class="projects-list clearfix row">
+  <div *ngFor="let project of projects" class="project-item" [ngClass]="{
+  'col-sm-12': projects.length == 1,
+  'col-sm-6': projects.length == 2,
+  'col-sm-4': projects.length == 3,
+  'col-sm-4': projects.length > 3}">
+    <a [routerLink]="['/projects', project._id]" *ngIf="project.photos != 'undefined'" [ngStyle]="{'background-image': 'url(' + uploads + project.photos[0] + ')'}">
+    <!--<a [routerLink]="['/projects', project._id]" *ngIf="project.photos != 'undefined'" [ngStyle]="{'background-image': project.photos[0]}">-->
+      <!--<img src="{{uploads + project.photos[0]}}" alt="">-->
+      <h3>{{project.name}}</h3>
+    </a>
+  </div>
+</div>

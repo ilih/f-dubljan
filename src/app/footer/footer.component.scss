@@ -1,0 +1,50 @@
+// lib
+@import "../../assets/css/lib/bootstrap/mixins/clearfix";
+@import "../../assets/css/lib/bootstrap/mixins/vendor-prefixes";
+
+// components
+@import "../../assets/scss/components/variables";
+
+
+footer {
+  padding: 15px;
+  @include clearfix();
+  border-top: 1px solid $white;
+  background: $darkGrey;
+
+  * {
+    font-size: 14px;
+    color: $white;
+  }
+
+  a {
+    @include transition(color 0.3s);
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $green;
+    }
+  }
+
+  .address div {
+    line-height: 20px;
+
+    &:first-child {
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    &:last-child {
+      margin-top: 10px;
+    }
+
+    a {
+      font-weight: 500;
+    }
+  }
+
+  .social-icons + div a {
+    line-height: 40px!important;
+  }
+}

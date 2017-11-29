@@ -1,0 +1,56 @@
+.form-title {
+  text-transform: uppercase;
+}
+
+.form-subtitle {
+  color: $black;
+  font-weight: 300;
+}
+
+form {
+  display: block;
+  padding: 0 30px;
+  background: $white;
+
+  input,
+  textarea {
+    border-color: $grey;
+    color: $black;
+
+    &:focus,
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  padding: 50px 0px 30px;
+
+  .success-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    @include transition(opacity 1s);
+
+    &.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    h2 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      @include translate(-50%, -50%);
+      color: $green;
+      font-weight: 600;
+    }
+  }
+}

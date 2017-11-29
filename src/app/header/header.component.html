@@ -1,0 +1,25 @@
+<header>
+  <div class="container">
+    <div class="col-sm-12 bg-white">
+      <a routerLink="/" id="logo">
+        <img src="assets/images/logo.png" alt="Львів на долоні. Черемшини 29">
+        <p>{{ 'nav.logo.text1' | translate }}</p>
+        <p>{{ 'nav.logo.text2' | translate }}</p>
+      </a>
+
+      <nav class="navbar">
+        <ul class="lang">
+          <li class="ua" [ngClass]="{active: activeLang === 'ua'}" (click)="useUa()"></li>
+          <li class="en" [ngClass]="{active: activeLang === 'en'}" (click)="useEn()"></li>
+        </ul>
+        <ul class="nav">
+          <li><a routerLink="/news" routerLinkActive="active">{{ 'nav.news' | translate }}</a></li>
+          <li><a routerLink="/projects" routerLinkActive="active">{{ 'nav.projects' | translate }}</a></li>
+          <li><a routerLink="/windows" routerLinkActive="active">{{ 'nav.windows' | translate }}</a></li>
+          <li><a routerLink="/doors" routerLinkActive="active">{{ 'nav.doors' | translate }}</a></li>
+          <li><a routerLink="/about_us" routerLinkActive="active">{{ 'nav.about_us' | translate }}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

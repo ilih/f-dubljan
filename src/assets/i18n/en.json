@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "logo": {
+      "text1": "dublianskiy",
+      "text2": "budivedlnik"
+    },
+    "news": "news",
+    "projects": "projects",
+    "windows": "windows",
+    "doors": "doors",
+    "about_us": "about us"
+  },
+  "projects": {
+    "success-title": "project added",
+    "fill-form": "add project",
+    "name": {
+      "name": "name",
+      "required": "Required field",
+      "minlength": "Min 2 charts"
+    },
+    "description": {
+      "name": "description",
+      "required": "Required field",
+      "minlength": "Min 2 charts"
+    },
+    "photos": "please select a photos",
+    "photos_alt": "pls add alt text in format ['alt','alt'...]",
+    "renders": "please select a photos",
+    "renders_alt": "pls add alt text in format ['alt','alt'...]",
+    "plans": "please select a photos",
+    "plans_alt": "pls add alt text in format ['alt','alt'...]",
+    "geometry": "pls pick point on map",
+    "new": "add new project"
+  },
+  "contact-us": {
+    "success-title": "Thanks. Your message has been send",
+    "title": "fill form",
+    "subtitle": "Our manager will answer on your question",
+    "name": {
+      "name": "name",
+      "pattern": "Not correct input's value",
+      "required": "Required field",
+      "minlength": "Min 2 charts",
+      "maxlength": "Max 20 charts"
+    },
+    "phone": {
+      "name": "phone",
+      "pattern": "Not correct input's value",
+      "required": "Required field",
+      "minlength": "Min 5 charts",
+      "maxlength": "Max 10 charts"
+    },
+    "email": {
+      "name": "E-mail",
+      "required": "Required field",
+      "pattern": "Not correct input's value"
+    },
+    "question": {
+      "name": "question"
+    },
+    "send": "Send"
+  },
+  "call-me": {
+    "success-title": "Thanks.",
+    "title": "fill phone's number",
+    "subtitle": "Our manager will recall you",
+    "phone": {
+      "name": "phone",
+      "pattern": "Not correct input's value",
+      "required": "Required field",
+      "minlength": "Min 5 charts",
+      "maxlength": "Max 10 charts"
+    },
+    "send": "Send"
+  },
+  "footer": {
+    "address": "Lviv, 8 Kniazha str. (sales department)",
+    "tel": "Tel.",
+    "office": "Office",
+    "fax": "Fax",
+    "work": "Mo-Fr",
+    "off": "Sa, Su: day-off",
+    "copy": "“Dublianskiy Budivedlnik“"
+  }
+}

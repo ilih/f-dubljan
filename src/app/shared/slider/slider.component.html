@@ -1,0 +1,10 @@
+<div *ngIf="list != null">
+  <div *ngIf="list.length == 1" class="carousel-slide">
+    <img src="{{uploads + list[0]}}" alt="">
+  </div>
+  <ngx-slick *ngIf="list.length > 1" [config]="slideConfig" class="carousel carousel-slide">
+    <div ngxSlickItem *ngFor="let item of list" class="slide">
+      <img src="{{uploads + item}}" alt="">
+    </div>
+  </ngx-slick>
+</div>

@@ -1,0 +1,140 @@
+// lib
+@import "../../assets/css/lib/bootstrap/mixins/vendor-prefixes";
+
+// components
+@import "../../assets/scss/components/variables";
+
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: $header-height;
+
+  .container > div {
+    position: relative;
+    border-bottom: 10px solid $grey;
+
+    #logo {
+      color: $grey;
+      text-transform: uppercase;
+      display: inline-block;
+      width: 150px;
+      position: absolute;
+      top: 6px;
+      left: 15px;
+      z-index: 1;
+
+      p {
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: $green;
+
+        & + p {
+          color: $grey;
+        }
+      }
+
+      img {
+        height: 32px;
+        float: left;
+        margin-right: 8px;
+        margin-top: 3px;
+      }
+    }
+
+    .navbar {
+      text-align: right;
+      margin: 0!important;
+      padding: 0!important;
+
+      ul {
+        display: inline-block;
+        margin: 7px 0 0 0;
+        padding: 0;
+        font-size: 0;
+        display: inline-table;
+        float: right;
+
+        li {
+          display: inline-block;
+          position: relative;
+
+          a {
+            font-size: 14px;
+            text-transform: uppercase;
+            background: $white;
+            color: $black;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            @include transition(all 0.3s);
+
+            &:hover,
+            &.active {
+              color: $green;
+              border-color: $green;
+            }
+          }
+        }
+
+        &:not(.lang)li:not(:last-child):after {
+          content: '.';
+          display: block;
+          height: 3px;
+          width: 3px;
+          background-color: $grey;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          @include translate(0, -50%);
+        }
+
+        &.lang {
+          margin-left: 15px;
+          margin-top: 2px;
+
+          li {
+            width: 44px;
+            height: 44px;
+            border-color: transparent!important;
+            cursor: pointer;
+            margin-left: 5px;
+            position: relative;
+            @include transition(opacity 0.5s);
+
+            &:hover {
+              opacity: 0.7;
+            }
+
+            &.ua {
+              background: url('/assets/images/ua.png') no-repeat;
+            }
+
+            &.en {
+              background: url('/assets/images/en.png') no-repeat;
+            }
+
+            &.active:after {
+              content: "";
+              width: 44px;
+              height: 10px;
+              position: absolute;
+              bottom: -13px;
+              left: 0px;
+              z-index: 0;
+              background: $green;
+              border-left: 1px solid $white;
+              border-right: 1px solid $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

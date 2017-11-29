@@ -1,0 +1,24 @@
+<div class="row form">
+  <div class="success-title" [class.active]="submitted">
+    <h2>{{ 'call-me.success-title' | translate}}</h2>
+  </div>
+  <form (ngSubmit)="onSubmit(callForm.value)" #callForm="ngForm">
+    <h2 class="form-title">{{ 'call-me.title' | translate }}</h2>
+    <h4 class="form-subtitle">{{ 'call-me.subtitle' | translate }}</h4>
+    <div class="row">
+      <div class="form-group col-sm-3">
+        <input type="text" [(ngModel)]="model.phone" name="phone" required minlength="5" maxlength="10"
+               class="form-control" placeholder="{{ 'call-me.phone.name' | translate}}" #phone="ngModel" pattern="\d{5,10}">
+        <span *ngIf="phone.invalid && !phone.pristine && phone.touched" class="error">
+        <span *ngIf="phone.errors.required">{{ 'call-me.phone.required' | translate}}</span>
+        <span *ngIf="phone.errors.minlength">{{ 'call-me.phone.minlength' | translate}}</span>
+        <span *ngIf="phone.errors.maxlength">{{ 'call-me.phone.maxlength' | translate}}</span>
+        <span *ngIf="phone.errors.pattern">{{ 'call-me.phone.pattern' | translate}}</span>
+      </span>
+      </div>
+      <div class="form-group col-sm-3">
+        <button type="submit" class="form-control" [disabled]="!callForm.form.valid">{{ 'call-me.send' | translate}}</button>
+      </div>
+    </div>
+  </form>
+</div>

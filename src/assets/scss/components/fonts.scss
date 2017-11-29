@@ -1,0 +1,20 @@
+.fontFamily($fontFamily, $fontLocation, $fontWeight) {
+  $font-face {
+    font-family: $fontFamily;
+    src: url(#{$fontLocation} + ".eot");
+    src: url(#{$fontLocation} + ".eot?#iefix")format("embedded-opentype"),
+    url(#{$fontLocation} + ".woff") format("woff"),
+    url(#{$fontLocation} + ".woff2") format("woff2"),
+    url(#{$fontLocation} + ".ttf") format("truetype");
+    font-weight: $fontWeight;
+  }
+}
+
+$fonts-folder:'../fonts/';
+
+// Open Sans
+.fontFamily("Open Sans", #{$fonts-folder} + 'Open_Sans/OpenSans-Light', 300);
+.fontFamily("Open Sans", #{$fonts-folder} + 'Open_Sans/OpenSans-Regular', 400);
+.fontFamily("Open Sans", #{$fonts-folder} + 'Open_Sans/OpenSans-Semibold', 500);
+.fontFamily("Open Sans", #{$fonts-folder} + 'Open_Sans/OpenSans-Bold', 600);
+.fontFamily("Open Sans", #{$fonts-folder} + 'Open_Sans/OpenSans-ExtraBold', 800);

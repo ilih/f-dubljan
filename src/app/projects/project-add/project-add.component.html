@@ -1,0 +1,73 @@
+<div class="add-new-project row form">
+  <div class="success-title" [class.active]="submitted">
+    <h2>{{ 'projects.success-title' | translate}}</h2>
+  </div>
+  <div class="col-sm-12">
+    <h2 class="form-title">{{ 'projects.fill-form' | translate }}</h2>
+    <form (ngSubmit)="onSubmit(projectForm.value)" #projectForm="ngForm">
+      <div class="form-group">
+        <label>{{ 'projects.name.name' | translate}}</label>
+        <input type="text" [(ngModel)]="model.name" name="name" required minlength="2"
+               class="form-control" placeholder="UA" #name="ngModel">
+        <span *ngIf="name.invalid && !name.pristine && name.touched" class="error">
+          <span *ngIf="name.errors.required">{{ 'contact-us.name.required' | translate}}</span>
+          <span *ngIf="name.errors.minlength">{{ 'contact-us.name.minlength' | translate}}</span>
+        </span>
+
+        <input type="text" [(ngModel)]="model.name_en" name="name_en" required minlength="2"
+               class="form-control" placeholder="EN" #name_en="ngModel">
+        <span *ngIf="name_en.invalid && !name_en.pristine && name_en.touched" class="error">
+          <span *ngIf="name_en.errors.required">{{ 'contact-us.name.required' | translate}}</span>
+          <span *ngIf="name_en.errors.minlength">{{ 'contact-us.name.minlength' | translate}}</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label>{{ 'projects.description.name' | translate}}</label>
+        <textarea [(ngModel)]="model.description" name="description" required minlength="2"
+                  class="form-control" rows="2" placeholder="UA" #description="ngModel"></textarea>
+        <span *ngIf="description.invalid && !description.pristine && description.touched" class="error">
+          <span *ngIf="description.errors.required">{{ 'projects.description.required' | translate}}</span>
+          <span *ngIf="description.errors.minlength">{{ 'projects.description.minlength' | translate}}</span>
+        </span>
+        <textarea [(ngModel)]="model.description_en" name="description_en" required minlength="2"
+                  class="form-control" rows="2" placeholder="EN" #description_en="ngModel"></textarea>
+        <span *ngIf="description_en.invalid && !description_en.pristine && description_en.touched" class="error">
+          <span *ngIf="description_en.errors.required">{{ 'projects.description.required' | translate}}</span>
+          <span *ngIf="description_en.errors.minlength">{{ 'projects.description.minlength' | translate}}</span>
+        </span>
+      </div>
+      <div class="form-group">
+        <label>{{ 'projects.photos' | translate}}</label>
+        <input type="file" [(ngModel)]="model.photos" name="photos" multiple (change)="onFileChange($event)">
+        <label>{{ 'projects.photos_alt' | translate}}</label>
+        <input type="text" [(ngModel)]="model.photos_alt" name="photos_alt" class="form-control" placeholder="UA">
+        <input type="text" [(ngModel)]="model.photos_alt_en" name="photos_alt_en" class="form-control" placeholder="EN">
+      </div>
+      <div class="form-group">
+        <label>{{ 'projects.renders' | translate}}</label>
+        <input type="file" [(ngModel)]="model.renders" name="renders" multiple (change)="onFileChange($event)">
+        <label>{{ 'projects.renders_alt' | translate}}</label>
+        <input type="text" [(ngModel)]="model.renders_alt" name="renders_alt" class="form-control" placeholder="UA">
+        <input type="text" [(ngModel)]="model.renders_alt_en" name="renders_alt_en" class="form-control" placeholder="EN">
+      </div>
+      <div class="form-group">
+        <label>{{ 'projects.plans' | translate}}</label>
+        <input type="file" [(ngModel)]="model.plans" name="plans" multiple (change)="onFileChange($event)">
+        <label>{{ 'projects.plans_alt' | translate}}</label>
+        <input type="text" [(ngModel)]="model.plans_alt" name="plans_alt" class="form-control" placeholder="UA">
+        <input type="text" [(ngModel)]="model.plans_alt_en" name="plans_alt_en" class="form-control" placeholder="EN">
+      </div>
+
+      <input type="hidden" [(ngModel)]="model.geometry" name="geometry">
+      <div class="form-group">
+        <label>{{ 'projects.geometry' | translate}}</label>
+      </div>
+
+      <app-map [mlat]="mlat" [mlng]="mlng" [mapEdit]="true" (coords)="getCoords($event)"></app-map>
+
+      <div class="form-group">
+        <button type="submit" class="form-control" [disabled]="!projectForm.form.valid">{{ 'contact-us.send' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>

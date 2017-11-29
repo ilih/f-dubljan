@@ -1,0 +1,18 @@
+<div class="row">
+  <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [zoomControl]="true"
+    [scrollwheel]="false"
+    [mapTypeControl]="true"
+    [styles]="customStyle"
+    (mapClick)="mapEdit?mapClicked($event):false">
+    <agm-marker
+      [latitude]="mlat"
+      [longitude]="mlng"
+      [markerDraggable]="mapEdit?true:false"
+      (dragEnd)="markerDragEnd($event)">
+    </agm-marker>
+  </agm-map>
+</div>

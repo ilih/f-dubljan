@@ -1,0 +1,74 @@
+body {
+  background: $light-grey;
+  padding-top: $header-height;
+  overflow-y: scroll;
+
+  ul {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+
+  // social icons -------------------
+  .google,
+  .vk,
+  .facebook,
+  .twitter {
+    &:before {
+      font-family: FontAwesome;
+      font-size: 20px;
+      margin: 0 8px;
+      line-height: 40px!important;
+    }
+  }
+
+  .google:before {content: "\f0d5";}
+  .vk:before {content: "\f189";}
+  .facebook:before {content: "\f09a";}
+  .twitter:before {content: "\f099";}
+  // end social icons ---------------
+
+
+
+  button,
+  button.form-control {
+    width: auto;
+    background-color: $green;
+    border-color: $green;
+    color: $white;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    @include transition(background-color 0.3s);
+
+
+    &[disabled] {
+      opacity: 0.5;
+      background-color: $green;
+    }
+
+    &:not([disabled]):hover {
+      background-color: $darkGrey;
+    }
+  }
+
+  .ng-invalid.ng-touched:not(.ng-pristine):not(form),
+  .error {
+    &,
+    &.form-control {
+      color: red;
+      border-color: red!important;
+      font-weight: 500;
+    }
+  }
+}

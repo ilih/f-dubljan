@@ -1,0 +1,16 @@
+<!--<app-project-add *ngIf="auth.isLogin"></app-project-add>-->
+<li><a routerLink="new" routerLinkActive="active">{{ 'projects.new' | translate }}</a></li>
+<hr>
+<div class="projects-list">
+  <div *ngFor="let project of projects" class="project-item" (click)="goToDetail()">
+    <a [routerLink]="['/projects', project._id]">
+      <h3>{{project.name}}</h3>
+      <p>{{project.description}}</p>
+      <div *ngIf="project.photos != 'undefined'" class="photos-list clearfix">
+        <div *ngFor="let item of project.photos" class="item">
+          <img src="{{uploads + item}}" alt="">
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

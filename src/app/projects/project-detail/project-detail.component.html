@@ -1,0 +1,11 @@
+<div class="projects-list row">
+  <div class="col-sm-12">
+    <h3>{{title}}</h3>
+    <p>{{subtitle}}</p>
+  </div>
+  <app-slider *ngIf="project.plans != 'undefined'" [list]="project.plans"></app-slider>
+  <app-slider *ngIf="project.renders != 'undefined'" [list]="project.renders"></app-slider>
+  <app-slider *ngIf="project.photos != 'undefined'" [list]="project.photos"></app-slider>
+</div>
+
+<app-map [mlat]="lat" [mlng]="lng" [lat]="lat" [lng]="lng"></app-map>
