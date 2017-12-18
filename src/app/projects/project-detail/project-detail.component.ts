@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-// import {Observable} from "rxjs/Observable";
 import {Project} from "../../models/project";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ProjectService} from "../../services/project.service";
 import {environment} from "../../../environments/environment";
 
 // Services
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
-// declare let jquery:any;
-// declare let $ :any;
 
 
 @Component({
@@ -28,8 +25,9 @@ export class ProjectDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private  projectService: ProjectService,
-    private translate: TranslateService
+    private projectService: ProjectService,
+    private translate: TranslateService,
+    private router: Router
   ) {
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.setContent();
@@ -44,6 +42,10 @@ export class ProjectDetailComponent implements OnInit {
       this.title = this.project.name_en;
       this.subtitle = this.project.description_en;
     }
+  }
+
+  goToProjects() {
+    this.router.navigate(['/projects']);
   }
 
   ngOnInit() {

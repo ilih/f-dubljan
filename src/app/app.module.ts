@@ -19,10 +19,6 @@ import { FooterComponent } from './footer/footer.component';
 // Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { NewsComponent } from './news/news.component';
-import { DoorsComponent } from './doors/doors.component';
-import { WindowsComponent } from './windows/windows.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 // Translate
@@ -30,10 +26,11 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 
+// Components
 import { ProjectLinksComponent } from './project-links/project-links.component';
-import { NewsLinksComponent } from './news-links/news-links.component';
-import { BannerComponent } from './banner/banner.component';
+import { BannerComponent } from './home/banner/banner.component';
 import { AboutCommentComponent } from './about-comment/about-comment.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -46,16 +43,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    WindowsComponent,
-    DoorsComponent,
-    AboutUsComponent,
     NotFoundComponent,
     HomeComponent,
-    NewsComponent,
     ProjectLinksComponent,
-    NewsLinksComponent,
     BannerComponent,
-    AboutCommentComponent
+    AboutCommentComponent,
+    ContactsComponent
   ],
   imports: [
     SharedModule,

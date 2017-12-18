@@ -1,5 +1,5 @@
 // lib
-//@import "../../assets/css/lib/bootstrap/mixins/vendor-prefixes";
+@import "../../assets/css/lib/bootstrap/mixins/vendor-prefixes";
 
 // components
 @import "../../assets/scss/components/variables";
@@ -11,12 +11,25 @@
   .project-item {
     height: 300px;
     position: relative;
+    margin-bottom: 10px;
+
+    &:hover {
+      a {
+        background-size: 110%;
+      }
+
+      h3 {
+        background-color: rgba(255,255,255,0.8);
+      }
+    }
 
     a {
       display: block;
       width: 100%;
       height: 100%;
-      background-size: cover;
+      background-size: 100%;
+      background-position: center;
+      @include transition(all 1.5s);
     }
 
     h3 {
@@ -29,6 +42,7 @@
       margin: 0;
       padding: 10px 25px;
       color: $black;
+      @include transition(background 1.5s);
     }
   }
 }

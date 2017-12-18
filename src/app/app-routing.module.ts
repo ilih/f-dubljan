@@ -1,13 +1,11 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// Compomemts
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HomeComponent} from './home/home.component';
-import {NewsComponent} from './news/news.component';
-import {WindowsComponent} from './windows/windows.component';
-import {DoorsComponent} from './doors/doors.component';
-import {AboutUsComponent} from './about-us/about-us.component';
-import {ProjectAddComponent} from "./projects/project-add/project-add.component";
+import {ContactsComponent} from "./contacts/contacts.component";
 
 
 const routes: Routes = [
@@ -25,19 +23,15 @@ const routes: Routes = [
   },
   {
     path: 'news',
-    component: NewsComponent
-  },
-  {
-    path: 'windows',
-    component: WindowsComponent
-  },
-  {
-    path: 'doors',
-    component: DoorsComponent
+    loadChildren: './news/news.module#NewsModule'
   },
   {
     path: 'about_us',
-    component: AboutUsComponent
+    loadChildren: './about-us/about-us.module#AboutUsModule'
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent
   },
   {
     path: 'not_found',
@@ -45,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'not_found',
+    redirectTo: 'not_found'
   }
 ];
 

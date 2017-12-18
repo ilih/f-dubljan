@@ -8,7 +8,8 @@
     "projects": "projects",
     "windows": "windows",
     "doors": "doors",
-    "about_us": "about us"
+    "about_us": "about us",
+    "contacts": "contacts"
   },
   "projects": {
     "success-title": "project added",
@@ -72,6 +73,10 @@
       "maxlength": "Max 10 charts"
     },
     "send": "Send"
+  },
+  "news": {
+    "new": "Add new news",
+    "edit": "Edit news"
   },
   "footer": {
     "address": "Lviv, 8 Kniazha str. (sales department)",

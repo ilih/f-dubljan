@@ -1,0 +1,15 @@
+.subcategory {
+  &.window:after,
+  &.door:after {
+    font-family: FontAwesome;
+    font-size: 40px;
+  }
+
+  &.window:after {
+    content: '\f17a';
+  }
+
+  &.door:after {
+    content: '\f096';
+  }
+}

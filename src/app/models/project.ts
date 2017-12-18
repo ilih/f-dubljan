@@ -1,5 +1,3 @@
-import {Coord} from "./coord";
-
 export class Project {
   name: string;
   name_en: string;
