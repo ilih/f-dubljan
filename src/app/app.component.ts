@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import {AngularFiree}
+// import { AngularFire, AuthP}
 
 @Component({
   selector: 'app-root',
