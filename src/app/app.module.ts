@@ -5,6 +5,8 @@ import { SharedModule } from "./shared/shared.module";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {AngularFireModule} from "angularfire2";
+
 
 // Routing
 import { AppRoutingModule } from "./app-routing.module";
@@ -31,6 +33,8 @@ import { ProjectLinksComponent } from './project-links/project-links.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { AboutCommentComponent } from './about-comment/about-comment.component';
 import { ContactsComponent } from './contacts/contacts.component';
+
+import { environment } from "../environments/environment";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -63,7 +67,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

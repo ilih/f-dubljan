@@ -14,5 +14,13 @@ export const environment = {
   SEND_NUMBER: BASE_API_URL + 'number',
   GOOGLE_MAPS_KEY: 'AIzaSyBWOpnO69Fdu3P7fy04T4t6mCMK4GnW3xA',
   COMPANY_LAT: 49.846759,
-  COMPANY_LNG: 24.039932
+  COMPANY_LNG: 24.039932,
+  firebase: {
+    apiKey: "AIzaSyDDYkRAarMernzom16sM7Ix-IalBw8J-jI",
+    authDomain: "dubljanbud-b6e32.firebaseapp.com",
+    databaseURL: "https://dubljanbud-b6e32.firebaseio.com",
+    projectId: "dubljanbud-b6e32",
+    storageBucket: "dubljanbud-b6e32.appspot.com",
+    messagingSenderId: "558485910909"
+  }
 };
