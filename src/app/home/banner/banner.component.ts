@@ -14,7 +14,7 @@ export class BannerComponent implements OnInit {
 
   constructor(public db: AngularFirestore, public af: AngularFireDatabase) {
     // this.banner = db.collection('/banner').valueChanges();
-    this.banner = af.list('/banner');
+    // this.banner = af.list('/banner');
   }
 
   ngOnInit() {
