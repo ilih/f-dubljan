@@ -38,6 +38,10 @@ import { AboutCommentComponent } from './about-comment/about-comment.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
 import { environment } from "../environments/environment";
+import { UploadListComponent } from './uploads/upload-list/upload-list.component';
+import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
+import {UploadService} from "./services/upload.service";
+import { UloadDetailComponent } from './uploads/uload-detail/uload-detail.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -55,7 +59,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProjectLinksComponent,
     BannerComponent,
     AboutCommentComponent,
-    ContactsComponent
+    ContactsComponent,
+    UploadListComponent,
+    UploadFormComponent,
+    UloadDetailComponent
   ],
   imports: [
     SharedModule,
@@ -72,11 +79,14 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireDatabaseModule
+    // AngularFireAuthModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    UploadService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

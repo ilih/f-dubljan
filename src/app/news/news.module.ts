@@ -8,9 +8,9 @@ import { NewsRoutingModule } from './news-routing.module';
 
 // Components
 import { NewsListComponent } from './news-list/news-list.component';
-import { NewsItemComponent } from './news-list/news-item/news-item.component';
-import { NewsAddComponent } from './news-add/news-add.component';
-import { NewsEditComponent } from './news-edit/news-edit.component';
+import { NewsDetailComponent } from './news-detail/news-detail.component';
+import { NewsFormComponent } from './news-form/news-form.component';
+import { UploadService } from "../services/upload.service";
 
 @NgModule({
   imports: [
@@ -22,9 +22,11 @@ import { NewsEditComponent } from './news-edit/news-edit.component';
   ],
   declarations: [
     NewsListComponent,
-    NewsItemComponent,
-    NewsAddComponent,
-    NewsEditComponent
+    NewsDetailComponent,
+    NewsFormComponent
+  ],
+  providers: [
+    UploadService
   ]
 })
 export class NewsModule { }

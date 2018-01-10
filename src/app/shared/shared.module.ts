@@ -15,6 +15,7 @@ import { SliderComponent } from './slider/slider.component';
 
 // Translate
 import {TranslateModule} from "@ngx-translate/core";
+import {LoadingSpinnerComponent} from "./ui/loading-spinner/loading-spinner.component";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {TranslateModule} from "@ngx-translate/core";
     TranslateModule,
     CallUsComponent,
     SliderComponent,
-    SlickModule
+    SlickModule,
+    LoadingSpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import {TranslateModule} from "@ngx-translate/core";
     MapComponent,
     ContactUsComponent,
     CallUsComponent,
-    SliderComponent
+    SliderComponent,
+    LoadingSpinnerComponent
   ]
 })
 export class SharedModule { }

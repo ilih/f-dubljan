@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HomeComponent} from './home/home.component';
 import {ContactsComponent} from "./contacts/contacts.component";
+import {UploadListComponent} from "./uploads/upload-list/upload-list.component";
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsComponent
+  },
+  {
+    path: 'upload',
+    component: UploadListComponent
   },
   {
     path: 'not_found',

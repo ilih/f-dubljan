@@ -1,5 +1,11 @@
-news-list works!
-
-<app-news-item></app-news-item>
 <a routerLink="new" routerLinkActive="active">{{ 'news.new' | translate }}</a>
 <a routerLink="edit" routerLinkActive="active">{{ 'news.edit' | translate }}</a>
+<app-news-form></app-news-form>
+<div *ngFor="let file of uploads | async">
+  {{file}}
+  <app-news-detail [upload]='file'></app-news-detail>
+</div>
+
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+
+<hr>

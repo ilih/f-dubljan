@@ -1,4 +1,12 @@
 <p>
   banner works!
-  {{banner.title}} && {{banner.subtitle}}
 </p>
+<!--<div *ngFor="let banner of banners | async">-->
+  <!--<h4>{{banner | json}}</h4>-->
+  <!--<p>{{banner.title}} && {{banner.subtitle}}</p>-->
+<!--</div>-->
+<h2>{{banner | async | json}}</h2>
+
+<input [(ngModel)]="newContent">
+<button (click)="updateContent()">update</button>
+
